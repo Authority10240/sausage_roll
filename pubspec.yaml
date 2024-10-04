@@ -1,0 +1,88 @@
+name: sausage_roll
+description: "A new Flutter project."
+
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '3.5.3'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  bloc: ^8.1.4
+  flutter_flavorizr: ^2.2.3
+  get: ^4.6.6
+  flutter_launcher_icons: ^0.14.1
+  freezed: ^2.5.7
+  equatable: ^2.0.5
+  intl_utils: ^2.8.7
+  get_it: ^7.7.0
+  injectable: ^2.4.4
+  sembast: ^3.7.4+3
+  path_provider: ^2.1.4
+  path: ^1.9.0
+  flutter_bloc_side_effect: ^0.0.2
+  bloc_test: ^9.1.7
+  dartz: ^0.10.1
+  persistent_bottom_nav_bar: ^6.2.1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  injectable_generator: ^2.6.1
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.13
+  freezed_annotation: ^2.4.4
+  json_serializable: ^6.8.0
+  mockito: ^5.4.4
+  mocktail: ^1.0.4
+ 
+  
+
+flutter:
+
+  
+  
+  
+  uses-material-design: true
+
+assets:
+  
+flutter_intl:
+enabled: true
+arb_dir: lib/localization
+output_dir: lib/generated
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

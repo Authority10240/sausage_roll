@@ -1,0 +1,39 @@
+[
+    {
+        "articleCode": "1000446",
+        "shopCode": "1234",
+        "availableFrom": "2020-12-30T00:00:00Z",
+        "availableUntil": "2045-05-13T23:59:59Z",
+        "eatOutPrice": 1.05,
+        "eatInPrice": 1.15,
+        "articleName": "Sausage Roll",
+        "dayParts": [
+            "Breakfast",
+            "Lunch",
+            "Evening"
+        ],
+        "internalDescription": "Sausage Roll",
+        "customerDescription": "test description",
+        "imageUri": "https://articles.greggs.co.uk/images/1000446.png?1623244287449",
+        "thumbnailUri": "https://articles.greggs.co.uk/images/1000446-thumb.png?1623244287450"
+    },
+    {
+
+        "articleCode": "1000446",
+        "shopCode": "1234",
+        "availableFrom": "2020-12-30T00:00:00Z",
+        "availableUntil": "2045-05-13T23:59:59Z",
+        "eatOutPrice": 1.05,
+        "eatInPrice": 1.15,
+        "articleName": "Sausage Roll",
+        "dayParts": [
+            "Breakfast",
+            "Lunch",
+            "Evening"
+        ],
+        "internalDescription": "Sausage Roll",
+        "customerDescription": "test description",
+        "imageUri": "https://articles.greggs.co.uk/images/1000446.png?1623244287449",
+        "thumbnailUri": "https://articles.greggs.co.uk/images/1000446-thumb.png?1623244287450"
+    }
+]

@@ -1,0 +1,27 @@
+flavorizr: 
+  flavors:
+
+    dev:
+      app:
+        name: "Sausage Roll dev"
+      android:
+        applicationId: "progressive.app.secure_access.dev"
+      ios:
+        bundleId: "progressive.app.secureaccess.dev"
+
+    uat:
+      app:
+        name: "Sausage Roll uat"
+      android:
+        applicationId: "progressive.app.secure_access.uat"
+      ios:
+        bundleId: "progressive.app.secureaccess.uat"
+
+    prod:
+      app:
+        name: "Sausage Roll prod"
+      android:
+        applicationId: "progressive.app.secure_access.prod"
+      ios:
+        bundleId: "progressive.app.secureaccess.prod"
+ 
