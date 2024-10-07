@@ -15,5 +15,6 @@
     "To":"To:",
     "itemAdded":"Item added",
     "itemAddedSuccessfully":"Item added successfully",
-    "yourCart":"Your cart!"
+    "yourCart":"Your cart!",
+    "totalDue":"Total due:"
 }

@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Offer available:"),
         "onOurMenuToday":
             MessageLookupByLibrary.simpleMessage("On our menu today:"),
+        "totalDue": MessageLookupByLibrary.simpleMessage("Total due:"),
         "welcomeToSausageRollHouse": MessageLookupByLibrary.simpleMessage(
             "Welcome to Sausage Roll House"),
         "whatOurCustomersCallIt":

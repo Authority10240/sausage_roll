@@ -4,3 +4,5 @@ part of 'sausage_roll_page_bloc.dart';
 abstract class SausageRollPageEvent extends BaseEvent {}
 
 class SausageRollGetAllSausagesEvent extends SausageRollPageEvent {}
+
+class SausageRollChangeArrangementEvent extends SausageRollPageEvent {}

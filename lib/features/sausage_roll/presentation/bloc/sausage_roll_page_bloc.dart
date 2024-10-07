@@ -20,9 +20,30 @@ class SausageRollBloc extends BaseBloc<SausageRollPageEvent,
       : super(SausageRollPageInitState()) {
     on<SausageRollGetAllSausagesEvent>(
         (event, emit) => _onSausageRollGetAllSausagesEvent(event, emit));
+    on<SausageRollChangeArrangementEvent>(
+        (event, emit) => _onSausageRollChangeArrangementEvent(event, emit));
   }
 
   final SausageRollGetAllSausagesUseCase sausageRollGetAllSausagesUseCase;
+
+  Future<void> _onSausageRollChangeArrangementEvent(
+      SausageRollChangeArrangementEvent event,
+      Emitter<SausageRollPageState> emit) async {
+    num eatInTotalAmount = 0;
+    num eatOutTotalAmount = 0;
+    state.sausages!
+        .forEach((element) => eatInTotalAmount += element.eatInPrice);
+    state.sausages!
+        .forEach((element) => eatOutTotalAmount += element.eatOutPrice);
+    state.eatIn = !state.eatIn!;
+    emit(SausageRollChangeArrangementState(
+        sausages: state.sausages,
+        amount: state.eatIn! ? eatInTotalAmount : eatOutTotalAmount,
+        errorCode: state.errorCode,
+        eatIn: state.eatIn,
+        errorMessage: state.errorCode)
+      ..dataState = DataState.success);
+  }
 
   Future<void> _onSausageRollGetAllSausagesEvent(
       SausageRollGetAllSausagesEvent event,
@@ -40,9 +61,7 @@ class SausageRollBloc extends BaseBloc<SausageRollPageEvent,
       model.forEach((element) => eatInTotalAmount += element.eatInPrice);
       model.forEach((element) => eatOutTotalAmount += element.eatOutPrice);
       emit(SausageRollGetAllSausagesState(
-          sausages: model,
-          eatOutAmount: eatOutTotalAmount,
-          eattInAmount: eatInTotalAmount)
+          sausages: model, amount: eatInTotalAmount)
         ..dataState = DataState.success);
     });
   }

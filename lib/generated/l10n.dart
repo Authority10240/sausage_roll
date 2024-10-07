@@ -209,6 +209,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Total due:`
+  String get totalDue {
+    return Intl.message(
+      'Total due:',
+      name: 'totalDue',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
