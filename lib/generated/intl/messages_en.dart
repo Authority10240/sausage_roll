@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "whatWeCallIt":
             MessageLookupByLibrary.simpleMessage("What we call it:"),
         "whenYouCanHaveOne":
-            MessageLookupByLibrary.simpleMessage("When you can have one:")
+            MessageLookupByLibrary.simpleMessage("When you can have one:"),
+        "yourCart": MessageLookupByLibrary.simpleMessage("Your cart!")
       };
 }

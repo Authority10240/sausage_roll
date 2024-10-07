@@ -6,7 +6,7 @@ import 'package:sausage_roll/core/locator.dart';
 import 'package:sausage_roll/features/bottom_navigation_page/presentation/bloc/bottom_navigation_page_bloc.dart';
 import 'package:sausage_roll/features/bottom_navigation_page/presentation/bloc/widgets/nav_bar_items.dart';
 import 'package:sausage_roll/features/cart/presentation/cart_page.dart';
-import 'package:sausage_roll/features/sausage_roll_page/presentation/sausage_roll_page_page.dart';
+import 'package:sausage_roll/features/sausage_roll/presentation/sausage_roll_page.dart';
 import 'package:sausage_roll/generated/l10n.dart';
 
 class BottomNavigationPage extends BasePage {

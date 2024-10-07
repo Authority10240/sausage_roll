@@ -36,16 +36,4 @@ class SausageRolllocalDataSourceImpl extends SausageRollLocalDataSource {
       rethrow;
     }
   }
-
-  @override
-  Future<List<SausageRollModel>> getAllSousages() async {
-    final records = await _cartStore.find(await db.database);
-
-    return records.map((element) {
-      SausageRollModel sausageRollModel =
-          SausageRollModel.fromJson(element.value);
-      sausageRollModel.id = element.key;
-      return sausageRollModel;
-    }).toList();
-  }
 }

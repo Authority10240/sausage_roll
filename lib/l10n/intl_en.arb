@@ -14,5 +14,6 @@
     "from":"From:",
     "To":"To:",
     "itemAdded":"Item added",
-    "itemAddedSuccessfully":"Item added successfully"
+    "itemAddedSuccessfully":"Item added successfully",
+    "yourCart":"Your cart!"
 }

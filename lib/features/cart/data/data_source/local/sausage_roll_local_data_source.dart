@@ -4,6 +4,4 @@ abstract class SausageRollLocalDataSource {
   Future<bool> insertSausage({required SausageRollModel sausageRollModel});
 
   Future<bool> deleteSausage({required SausageRollModel sausageRollModel});
-
-  Future<List<SausageRollModel>> getAllSousages();
 }
