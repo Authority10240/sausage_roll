@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class SausageRollEntity extends Equatable {
+class CartRollEntity extends Equatable {
   int? id;
   final String articleCode;
   final String shopCode;
@@ -15,7 +15,7 @@ class SausageRollEntity extends Equatable {
   final String imageUri;
   final String thumbnailUri;
 
-  SausageRollEntity(
+  CartRollEntity(
       {this.id,
       required this.articleCode,
       required this.shopCode,

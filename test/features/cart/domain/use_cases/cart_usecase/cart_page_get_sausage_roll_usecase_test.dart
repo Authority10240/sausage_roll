@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:sausage_roll/core/failures/base_failure.dart';
 import 'package:sausage_roll/core/failures/runtime_exception.dart';
 import 'package:sausage_roll/features/cart/data/models/cart_model_response/sausage_roll_model.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/entities/cart_roll_entity.dart';
 import 'package:sausage_roll/features/cart/domain/repository/cart_repository/cart_page_get_sausage_roll_repository.dart';
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart';
 
@@ -42,11 +42,11 @@ void main() {
     cartPageGetSausageRollUseCase = CartPageGetSausageRollUseCase(
         cartPageGetSausageRollRepository: mockCartPageGetSausageRollRepository);
 
-    final expected = Right<BaseFailure, SausageRollEntity>(tSausageRollModel);
+    final expected = Right<BaseFailure, CartRollEntity>(tSausageRollModel);
 
     //arrange
 
-    when<Future<Either<BaseFailure, SausageRollEntity>>>(
+    when<Future<Either<BaseFailure, CartRollEntity>>>(
             mockCartPageGetSausageRollRepository.call)
         .thenAnswer((_) async => expected);
 
@@ -65,11 +65,11 @@ void main() {
     cartPageGetSausageRollUseCase = CartPageGetSausageRollUseCase(
         cartPageGetSausageRollRepository: mockCartPageGetSausageRollRepository);
     test('return runtime failure on server error', () async {
-      final expected = Left<BaseFailure, SausageRollEntity>(
+      final expected = Left<BaseFailure, CartRollEntity>(
           RuntimeException(errorCode: '0000', message: 'test error'));
 
       //arrange
-      when<Future<Either<BaseFailure, SausageRollEntity>>>(
+      when<Future<Either<BaseFailure, CartRollEntity>>>(
               mockCartPageGetSausageRollRepository.call)
           .thenAnswer((_) async => expected);
 

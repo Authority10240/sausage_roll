@@ -14,13 +14,14 @@ class SausageCartDataSourceImpl extends SausageCartDataSource {
 
   final _cartStore = intMapStoreFactory.store(cartName);
   @override
-  Future<List<SausageRollModel>> getAllSausages() async {
+  Future<List<SausageRollEntity>> getAllSausages() async {
     final records = await _cartStore.find(await db.database);
 
     return records.map((element) {
       SausageRollModel sausageRollModel =
           SausageRollModel.fromJson(element.value);
       sausageRollModel.id = element.key;
+
       return sausageRollModel;
     }).toList();
   }

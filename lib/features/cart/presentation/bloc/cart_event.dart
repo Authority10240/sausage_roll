@@ -7,7 +7,7 @@ class CartPageLoadCart extends CartPageEvent {}
 
 class CartPageAddItemEvent extends CartPageEvent {
   CartPageAddItemEvent({required this.sausageRollEntity});
-  final SausageRollEntity sausageRollEntity;
+  final CartRollEntity sausageRollEntity;
 }
 
 class CartPageRemoveItemEvent extends CartPageEvent {

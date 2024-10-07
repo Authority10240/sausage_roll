@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/entities/cart_roll_entity.dart';
 
-class SausageRollModel extends SausageRollEntity {
+class SausageRollModel extends CartRollEntity {
   SausageRollModel({
     super.id,
     required super.articleCode,
@@ -53,7 +53,7 @@ class SausageRollModel extends SausageRollEntity {
     };
   }
 
-  factory SausageRollModel.fromEntity({required SausageRollEntity entity}) {
+  factory SausageRollModel.fromEntity({required CartRollEntity entity}) {
     return SausageRollModel(
         articleCode: entity.articleCode,
         shopCode: entity.shopCode,

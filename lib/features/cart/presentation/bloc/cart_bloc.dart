@@ -9,7 +9,7 @@ import 'package:sausage_roll/core/base_classes/base_state.dart';
 import 'package:sausage_roll/core/failures/base_failure.dart';
 import 'package:sausage_roll/core/utilities/type_defs.dart';
 import 'package:sausage_roll/features/cart/data/models/cart_model_response/sausage_roll_model.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/entities/cart_roll_entity.dart';
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_add_item_usecase.dart';
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart';
 

@@ -19,5 +19,5 @@ class CartPageGetSausageRollState extends CartPageState {
   CartPageGetSausageRollState(
       {this.sausageRollEntity, super.errorMessage, super.errorCode});
 
-  SausageRollEntity? sausageRollEntity;
+  CartRollEntity? sausageRollEntity;
 }

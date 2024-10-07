@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:sausage_roll/core/base_classes/base_usecase.dart';
 import 'package:sausage_roll/core/failures/base_failure.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/entities/cart_roll_entity.dart';
 import 'package:sausage_roll/features/cart/domain/repository/cart_repository/cart_page_add_item_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -28,5 +28,5 @@ class CartPageAddItemUseCase extends BaseUseCase<CartPageAddItemUseCaseParams,
 class CartPageAddItemUseCaseParams extends BaseUseCaseParams {
   CartPageAddItemUseCaseParams({required this.sausageRollEntity});
 
-  final SausageRollEntity sausageRollEntity;
+  final CartRollEntity sausageRollEntity;
 }

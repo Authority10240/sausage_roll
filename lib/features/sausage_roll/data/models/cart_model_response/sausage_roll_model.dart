@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+
+import 'package:sausage_roll/features/sausage_roll/domain/entities/sausage_roll_entity.dart';
 
 class SausageRollModel extends SausageRollEntity {
   SausageRollModel({
@@ -67,5 +68,9 @@ class SausageRollModel extends SausageRollEntity {
         customerDescription: entity.customerDescription,
         imageUri: entity.imageUri,
         thumbnailUri: entity.thumbnailUri);
+  }
+
+  SausageRollEntity toEntity() {
+    return this;
   }
 }

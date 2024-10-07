@@ -42,7 +42,8 @@ class SausageRollBloc extends BaseBloc<SausageRollPageEvent,
       emit(SausageRollGetAllSausagesState(
           sausages: model,
           eatOutAmount: eatOutTotalAmount,
-          eattInAmount: eatInTotalAmount));
+          eattInAmount: eatInTotalAmount)
+        ..dataState = DataState.success);
     });
   }
 }

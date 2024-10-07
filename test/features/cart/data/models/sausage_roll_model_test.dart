@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sausage_roll/features/cart/data/models/cart_model_response/sausage_roll_model.dart';
-import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/entities/cart_roll_entity.dart';
 
 import '../../../../test_data/test_data_reader.dart';
 
@@ -25,7 +25,7 @@ void main() {
           'https://articles.greggs.co.uk/images/1000446-thumb.png?1623244287450');
 
   test('should be a subclass of SausageRollEntity', () async {
-    expect(tSausageRollModel, isA<SausageRollEntity>());
+    expect(tSausageRollModel, isA<CartRollEntity>());
   });
 
   group('fromJson', () {

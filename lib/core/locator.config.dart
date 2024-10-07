@@ -38,6 +38,8 @@ import '../features/sausage_roll/data/data_sources/local/sausage_cart_data_sourc
     as _i46;
 import '../features/sausage_roll/data/data_sources/local/sausage_cart_data_source_impl.dart'
     as _i1018;
+import '../features/sausage_roll/data/repository_impl/sausage_roll_repository_impl/sausage_roll_get_all_sausages_repository_impl.dart'
+    as _i310;
 import '../features/sausage_roll/domain/repository/sausage_roll_repository/sausage_roll_get_all_sausages_repository.dart'
     as _i920;
 import '../features/sausage_roll/domain/use_cases/sausage_roll_usecase/sausage_roll_get_all_sausages_usecase.dart'
@@ -63,20 +65,19 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i504.S>(() => registerModules.appLocalizations);
     gh.factory<_i409.BottomNavigationPageBloc>(
         () => _i409.BottomNavigationPageBloc());
-    gh.factory<_i517.SausageRollBloc>(() => _i517.SausageRollBloc());
     gh.singleton<_i264.CustomSembastDatabase>(
         () => _i264.CustomSembastDatabase());
     gh.singleton<_i670.SausageRollRemoteDataSource>(
         () => _i818.SausageRollRemoteDataSourceImpl());
-    gh.singleton<_i46.SausageCartDataSource>(
-        () => _i1018.SausageCartDataSourceImpl());
-    gh.factory<_i686.SausageRollGetAllSausagesUseCase>(() =>
-        _i686.SausageRollGetAllSausagesUseCase(
-            sausageRollGetAllSausagesRepository:
-                gh<_i920.SausageRollGetAllSausagesRepository>()));
+    gh.singleton<_i46.SausageCartDataSource>(() =>
+        _i1018.SausageCartDataSourceImpl(
+            db: gh<_i264.CustomSembastDatabase>()));
     gh.singleton<_i929.SausageRollLocalDataSource>(() =>
         _i1069.SausageRolllocalDataSourceImpl(
             db: gh<_i264.CustomSembastDatabase>()));
+    gh.factory<_i920.SausageRollGetAllSausagesRepository>(() =>
+        _i310.SausageRollGetAllSausagesRepositoryImpl(
+            sausageCartDataSource: gh<_i46.SausageCartDataSource>()));
     gh.factory<_i76.CartPageAddItemRepository>(() =>
         _i705.CartPageAddItemRepositoryImpl(
             sausageRollLocalDataSource:
@@ -85,12 +86,19 @@ extension GetItInjectableX on _i174.GetIt {
         _i921.CartPageGetSausageRollRepositoryImpl(
             sausageRollRemoteDataSource:
                 gh<_i670.SausageRollRemoteDataSource>()));
+    gh.factory<_i686.SausageRollGetAllSausagesUseCase>(() =>
+        _i686.SausageRollGetAllSausagesUseCase(
+            sausageRollGetAllSausagesRepository:
+                gh<_i920.SausageRollGetAllSausagesRepository>()));
     gh.factory<_i31.CartPageAddItemUseCase>(() => _i31.CartPageAddItemUseCase(
         cartPageAddItemRepository: gh<_i76.CartPageAddItemRepository>()));
     gh.factory<_i321.CartPageGetSausageRollUseCase>(() =>
         _i321.CartPageGetSausageRollUseCase(
             cartPageGetSausageRollRepository:
                 gh<_i332.CartPageGetSausageRollRepository>()));
+    gh.factory<_i517.SausageRollBloc>(() => _i517.SausageRollBloc(
+        sausageRollGetAllSausagesUseCase:
+            gh<_i686.SausageRollGetAllSausagesUseCase>()));
     gh.factory<_i421.CartBloc>(() => _i421.CartBloc(
           cartPageGetSausageRollUseCase:
               gh<_i321.CartPageGetSausageRollUseCase>(),
