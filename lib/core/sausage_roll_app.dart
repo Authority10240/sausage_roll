@@ -5,10 +5,12 @@ import 'package:sausage_roll/core/app_locals.dart';
 import 'package:sausage_roll/core/locator.dart';
 import 'package:sausage_roll/features/bottom_navigation_page/presentation/bottom_navigation_page.dart';
 import 'package:sausage_roll/features/cart/presentation/cart_page.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:sausage_roll/generated/l10n.dart';
 
 class SausageRollApp {
   static Future<void> appInit() async {
+    initializeDateFormatting("en_US", null);
     setupLocators();
     run();
   }

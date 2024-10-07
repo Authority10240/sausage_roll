@@ -38,6 +38,7 @@ class _BottomNavigationPagePageState
       builder: (context, state) {
         return PersistentTabView(
           context,
+          backgroundColor: Color.fromARGB(255, 79, 71, 155),
           screens: const [CartPage(), SausageRollPage()],
           items: navBarItems,
         );

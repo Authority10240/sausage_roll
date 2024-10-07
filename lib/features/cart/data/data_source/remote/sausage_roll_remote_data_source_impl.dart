@@ -12,7 +12,7 @@ class SausageRollRemoteDataSourceImpl extends SausageRollRemoteDataSource {
   Future<SausageRollEntity> cartPageGetSausageRoll() async {
     try {
       return SausageRollModel.fromJson(
-          json.decode(jsonData('sausage_roll.json')));
+          json.decode(await jsonData('sausage_roll.json')));
     } catch (ex) {
       rethrow;
     }

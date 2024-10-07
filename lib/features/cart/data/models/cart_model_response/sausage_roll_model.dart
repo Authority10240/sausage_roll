@@ -32,7 +32,7 @@ class SausageRollModel extends SausageRollEntity {
         internalDescription: json['internalDescription'],
         customerDescription: json['customerDescription'],
         imageUri: json['imageUri'],
-        thumbnailUri: 'thumbnailUri');
+        thumbnailUri: json['thumbnailUri']);
   }
 
   Map<String, dynamic> toJson() {

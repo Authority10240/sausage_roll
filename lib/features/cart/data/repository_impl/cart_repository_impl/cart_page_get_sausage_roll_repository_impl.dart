@@ -18,7 +18,7 @@ class CartPageGetSausageRollRepositoryImpl
   final SausageRollRemoteDataSource sausageRollRemoteDataSource;
 
   @override
-  Future<ResultFuture<SausageRollEntity>> call(
+  Future<Either<BaseFailure, SausageRollEntity>> call(
       {CartPageGetSausageRollRepositoryParams? params}) async {
     try {
       return Right(await sausageRollRemoteDataSource.cartPageGetSausageRoll());

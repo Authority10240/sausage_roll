@@ -7,7 +7,8 @@ abstract class BasePage extends BaseWidget {
   const BasePage({Key? key}) : super(key: key);
 }
 
-abstract class BasePageState<T extends BasePage, B extends BaseBloc> extends BaseWidgetState<T, B> {
+abstract class BasePageState<T extends BasePage, B extends BaseBloc>
+    extends BaseWidgetState<T, B> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   bool subscribeToVisibilityEvents = false;
 
@@ -26,13 +27,7 @@ abstract class BasePageState<T extends BasePage, B extends BaseBloc> extends Bas
           appBar: buildAppbar(),
           bottomNavigationBar: bottomNavigationBar(),
           floatingActionButton: floatingActionButton(),
-          body: Padding(
-            padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height / 14,
-              bottom: MediaQuery.sizeOf(context).height / 14,
-            ),
-            child: buildView(context),
-          ),
+          body: buildView(context),
         ),
       ),
     );

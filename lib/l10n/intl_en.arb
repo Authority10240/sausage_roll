@@ -1,4 +1,16 @@
 {
+    "@@local": "en",
     "anErrorHasOccured":"An error has occured",
-    "welcomeToSausageRollHouse":"Welcome to Sausage Roll House"
+    "welcomeToSausageRollHouse":"Welcome to Sausage Roll House",
+    "hereIsOurLatestSousageRoll":"Here is our latest Sausage Roll",
+    "whatWeCallIt":"What we call it:",
+    "whatOurCustomersCallIt":"What our customers call it:",
+    "addToCArt":"Add to cart",
+    "whenYouCanHaveOne":"When you can have one:",
+    "offerAvailable":"Offer available:",
+    "eatIn":"Eat in:",
+    "eatOut":"Eat out:",
+    "onOurMenuToday":"On our menu today:",
+    "from":"From:",
+    "To":"To:"
 }

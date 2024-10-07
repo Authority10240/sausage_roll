@@ -30,6 +30,7 @@ dependencies:
   bloc_test: ^9.1.7
   dartz: ^0.10.1
   persistent_bottom_nav_bar: ^6.2.1
+  cached_network_image: ^3.4.1
   
 
 dev_dependencies:
@@ -42,7 +43,6 @@ dev_dependencies:
   freezed_annotation: ^2.4.4
   json_serializable: ^6.8.0
   mockito: ^5.4.4
-  mocktail: ^1.0.4
  
   
 
@@ -53,7 +53,9 @@ flutter:
   
   uses-material-design: true
 
-assets:
+  assets:
+    - 'lib/test_data/sausage_roll.json'  
+
   
 flutter_intl:
 enabled: true

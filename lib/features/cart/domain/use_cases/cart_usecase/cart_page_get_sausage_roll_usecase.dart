@@ -8,14 +8,15 @@ import 'package:sausage_roll/features/cart/domain/repository/cart_repository/car
 
 @Injectable()
 class CartPageGetSausageRollUseCase extends BaseUseCase<
-    CartPageGetSausageRollUseCaseParams, ResultFuture<SausageRollEntity>> {
+    CartPageGetSausageRollUseCaseParams,
+    Either<BaseFailure, SausageRollEntity>> {
   final CartPageGetSausageRollRepository cartPageGetSausageRollRepository;
 
   CartPageGetSausageRollUseCase(
       {required this.cartPageGetSausageRollRepository});
 
   @override
-  Future<ResultFuture<SausageRollEntity>> call(
+  Future<Either<BaseFailure, SausageRollEntity>> call(
       {CartPageGetSausageRollUseCaseParams? params}) async {
     return await cartPageGetSausageRollRepository.call();
   }

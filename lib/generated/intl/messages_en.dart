@@ -22,9 +22,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "To": MessageLookupByLibrary.simpleMessage("To:"),
+        "addToCArt": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "anErrorHasOccured":
             MessageLookupByLibrary.simpleMessage("An error has occured"),
+        "eatIn": MessageLookupByLibrary.simpleMessage("Eat in:"),
+        "eatOut": MessageLookupByLibrary.simpleMessage("Eat out:"),
+        "from": MessageLookupByLibrary.simpleMessage("From:"),
+        "hereIsOurLatestSousageRoll": MessageLookupByLibrary.simpleMessage(
+            "Here is our latest Sausage Roll"),
+        "offerAvailable":
+            MessageLookupByLibrary.simpleMessage("Offer available:"),
+        "onOurMenuToday":
+            MessageLookupByLibrary.simpleMessage("On our menu today:"),
         "welcomeToSausageRollHouse": MessageLookupByLibrary.simpleMessage(
-            "Welcome to Sausage Roll House")
+            "Welcome to Sausage Roll House"),
+        "whatOurCustomersCallIt":
+            MessageLookupByLibrary.simpleMessage("What our customers call it:"),
+        "whatWeCallIt":
+            MessageLookupByLibrary.simpleMessage("What we call it:"),
+        "whenYouCanHaveOne":
+            MessageLookupByLibrary.simpleMessage("When you can have one:")
       };
 }
