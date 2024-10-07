@@ -11,7 +11,7 @@ import 'package:sausage_roll/features/cart/domain/repository/cart_repository/car
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart';
 
 class MockCartPageGetSausageRollRepository extends Mock
-    implements CartPageGetSausageRollRepository {}
+    implements CartPageGetSausageRollRepositoryImpl {}
 
 void main() {
   CartPageGetSausageRollUseCase cartPageGetSausageRollUseCase;
@@ -51,7 +51,7 @@ void main() {
 
     //arrange
 
-    when(() => mockCartPageGetSausageRollRepository.call())
+    when(() async => await mockCartPageGetSausageRollRepository.call())
         .thenReturn(() async => Right(tSausageRollModel));
 
     //act
@@ -80,7 +80,7 @@ void main() {
 
       //assert
       verify(() async => await mockCartPageGetSausageRollRepository.call());
-      expect(result, equals(Left(tSausageRollModel)));
+      expect(result, equals(Left(runtimeException)));
       verifyNoMoreInteractions(mockCartPageGetSausageRollRepository);
     });
   });
