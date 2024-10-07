@@ -11,7 +11,7 @@ import 'package:sausage_roll/features/cart/domain/repository/cart_repository/car
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart';
 
 class MockCartPageGetSausageRollRepository extends Mock
-    implements CartPageGetSausageRollRepositoryImpl {}
+    implements CartPageGetSausageRollRepository {}
 
 void main() {
   CartPageGetSausageRollUseCase cartPageGetSausageRollUseCase;
@@ -49,10 +49,13 @@ void main() {
     cartPageGetSausageRollUseCase = CartPageGetSausageRollUseCase(
         cartPageGetSausageRollRepository: mockCartPageGetSausageRollRepository);
 
+    final expected = Right<BaseFailure, SausageRollEntity>(tSausageRollModel);
+
     //arrange
 
-    when(() async => await mockCartPageGetSausageRollRepository.call())
-        .thenReturn(() async => Right(tSausageRollModel));
+    when<Future<Either<BaseFailure, SausageRollEntity>>>(
+            mockCartPageGetSausageRollRepository.call())
+        .thenAnswer((_) async => expected);
 
     //act
     final result = await cartPageGetSausageRollUseCase.call();
@@ -68,19 +71,22 @@ void main() {
         MockCartPageGetSausageRollRepository();
     cartPageGetSausageRollUseCase = CartPageGetSausageRollUseCase(
         cartPageGetSausageRollRepository: mockCartPageGetSausageRollRepository);
-    RuntimeException runtimeException =
-        RuntimeException(errorCode: '0000', message: 'test error');
+    test('return runtime failure on server error', () async {
+      final expected = Left<BaseFailure, SausageRollEntity>(
+          RuntimeException(errorCode: '0000', message: 'test error'));
+      ;
 
-    test('return dio failure on server error', () async {
-      when(() async => await mockCartPageGetSausageRollRepository.call())
-          .thenReturn(() async => left(runtimeException));
+      //arrange
+      when<Future<Either<BaseFailure, SausageRollEntity>>>(
+              mockCartPageGetSausageRollRepository.call())
+          .thenAnswer((_) async => expected);
 
       //act
       final result = await cartPageGetSausageRollUseCase.call();
 
       //assert
       verify(() async => await mockCartPageGetSausageRollRepository.call());
-      expect(result, equals(Left(runtimeException)));
+      expect(result, equals(expected));
       verifyNoMoreInteractions(mockCartPageGetSausageRollRepository);
     });
   });
