@@ -12,5 +12,7 @@
     "eatOut":"Eat out:",
     "onOurMenuToday":"On our menu today:",
     "from":"From:",
-    "To":"To:"
+    "To":"To:",
+    "itemAdded":"Item added",
+    "itemAddedSuccessfully":"Item added successfully"
 }

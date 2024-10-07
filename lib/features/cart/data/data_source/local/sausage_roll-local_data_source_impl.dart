@@ -19,16 +19,22 @@ class SausageRolllocalDataSourceImpl extends SausageRollLocalDataSource {
   }*/
 
   @override
-  Future<void> deleteSausage(
+  Future<bool> deleteSausage(
       {required SausageRollModel sausageRollModel}) async {
     final finder = Finder(filter: Filter.byKey(sausageRollModel.id));
     await _cartStore.delete(await db.database, finder: finder);
+    return true;
   }
 
   @override
-  Future<void> insertSausage({required SausageRollModel sausageRollModel}) {
-    // TODO: implement insertSausage
-    throw UnimplementedError();
+  Future<bool> insertSausage(
+      {required SausageRollModel sausageRollModel}) async {
+    try {
+      _cartStore.add(await db.database, sausageRollModel.toJson());
+      return true;
+    } catch (ex) {
+      rethrow;
+    }
   }
 
   @override

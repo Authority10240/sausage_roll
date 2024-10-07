@@ -6,8 +6,8 @@ abstract class CartPageEvent extends BaseEvent {}
 class CartPageLoadCart extends CartPageEvent {}
 
 class CartPageAddItemEvent extends CartPageEvent {
-  CartPageAddItemEvent({required this.sausageRollModel});
-  final SausageRollModel sausageRollModel;
+  CartPageAddItemEvent({required this.sausageRollEntity});
+  final SausageRollEntity sausageRollEntity;
 }
 
 class CartPageRemoveItemEvent extends CartPageEvent {

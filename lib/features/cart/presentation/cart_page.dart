@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:flutter_bloc_side_effect/flutter_bloc_side_effect.dart';
 import 'package:sausage_roll/core/base_classes/base_page.dart';
@@ -43,7 +44,20 @@ class _CartPageState extends BasePageState<CartPage, CartBloc> {
     return BlocConsumerWithSideEffects<CartBloc, CartPageState,
         CartPageSideEffect>(
       bloc: baseBloc,
-      sideEffectsListener: (context, sideEffect) {},
+      sideEffectsListener: (context, sideEffect) {
+        if (sideEffect is CartPageAddItemSideEffect) {
+          if (sideEffect.dataState == DataState.loading) {}
+          if (sideEffect.dataState == DataState.error) {
+            Get.snackbar(sideEffect.errorCode!, sideEffect.errorMessage!,
+                colorText: Colors.white);
+          }
+          if (sideEffect.dataState == DataState.success) {
+            Get.snackbar(appLocalizations.itemAdded,
+                appLocalizations.itemAddedSuccessfully,
+                colorText: Colors.white);
+          }
+        }
+      },
       listener: (context, state) {},
       builder: (context, state) {
         return state is CartPageGetSausageRollState
@@ -161,7 +175,10 @@ class _CartPageState extends BasePageState<CartPage, CartBloc> {
                                   ),
                                   CustomButton(
                                     caption: appLocalizations.addToCArt,
-                                    onTap: () {},
+                                    onTap: () => getBloc().add(
+                                        CartPageAddItemEvent(
+                                            sausageRollEntity:
+                                                state.sausageRollEntity!)),
                                   )
                                 ],
                               )),

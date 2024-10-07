@@ -52,4 +52,20 @@ class SausageRollModel extends SausageRollEntity {
       "thumbnailUri": thumbnailUri
     };
   }
+
+  factory SausageRollModel.fromEntity({required SausageRollEntity entity}) {
+    return SausageRollModel(
+        articleCode: entity.articleCode,
+        shopCode: entity.shopCode,
+        availableFrom: entity.availableFrom,
+        availableUntil: entity.availableUntil,
+        eatOutPrice: entity.eatOutPrice,
+        eatInPrice: entity.eatInPrice,
+        articleName: entity.articleName,
+        dayParts: entity.dayParts,
+        internalDescription: entity.internalDescription,
+        customerDescription: entity.customerDescription,
+        imageUri: entity.imageUri,
+        thumbnailUri: entity.thumbnailUri);
+  }
 }

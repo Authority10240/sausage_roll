@@ -7,7 +7,9 @@ abstract class CartPageState extends BaseState {
 
 class CartPageInitState extends CartPageState {}
 
-class CartPageAddItemState extends CartPageState {}
+class CartPageAddItemState extends CartPageState {
+  CartPageAddItemState({super.errorCode, super.errorMessage});
+}
 
 class CartPageRemoteItemState extends CartPageState {}
 

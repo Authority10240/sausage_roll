@@ -179,6 +179,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Item added`
+  String get itemAdded {
+    return Intl.message(
+      'Item added',
+      name: 'itemAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item added successfully`
+  String get itemAddedSuccessfully {
+    return Intl.message(
+      'Item added successfully',
+      name: 'itemAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

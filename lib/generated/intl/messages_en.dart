@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "from": MessageLookupByLibrary.simpleMessage("From:"),
         "hereIsOurLatestSousageRoll": MessageLookupByLibrary.simpleMessage(
             "Here is our latest Sausage Roll"),
+        "itemAdded": MessageLookupByLibrary.simpleMessage("Item added"),
+        "itemAddedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Item added successfully"),
         "offerAvailable":
             MessageLookupByLibrary.simpleMessage("Offer available:"),
         "onOurMenuToday":

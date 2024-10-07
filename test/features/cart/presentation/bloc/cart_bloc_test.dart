@@ -7,15 +7,20 @@ import 'package:sausage_roll/core/failures/base_failure.dart';
 import 'package:sausage_roll/core/failures/runtime_exception.dart';
 import 'package:sausage_roll/features/cart/data/models/cart_model_response/sausage_roll_model.dart';
 import 'package:sausage_roll/features/cart/domain/entities/sausage_roll_entity.dart';
+import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_add_item_usecase.dart';
 import 'package:sausage_roll/features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart';
 import 'package:sausage_roll/features/cart/presentation/bloc/cart_bloc.dart';
 
 class MockCartPageGetSausageRollUsecase extends Mock
     implements CartPageGetSausageRollUseCase {}
 
+class MockCartPageAddItemUsecase extends Mock
+    implements CartPageAddItemUseCase {}
+
 void main() {
   CartBloc bloc;
   CartPageGetSausageRollUseCase mockCartPageGetSausageRollUsecase;
+  CartPageAddItemUseCase mockCartPageAddItemUseCase;
   final tCartPageGetSausageRollUsecaseParams =
       CartPageGetSausageRollUseCaseParams();
 
@@ -46,8 +51,10 @@ void main() {
         build: () {
           mockCartPageGetSausageRollUsecase =
               MockCartPageGetSausageRollUsecase();
+          mockCartPageAddItemUseCase = MockCartPageAddItemUsecase();
           bloc = CartBloc(
-              cartPageGetSausageRollUseCase: mockCartPageGetSausageRollUsecase);
+              cartPageGetSausageRollUseCase: mockCartPageGetSausageRollUsecase,
+              cartPageAddItemUseCase: mockCartPageAddItemUseCase);
 
           when(() => mockCartPageGetSausageRollUsecase.call())
               .thenAnswer((_) async => Right(tSausageRollModel));
@@ -66,8 +73,10 @@ void main() {
         build: () {
           mockCartPageGetSausageRollUsecase =
               MockCartPageGetSausageRollUsecase();
+          mockCartPageAddItemUseCase = MockCartPageAddItemUsecase();
           bloc = CartBloc(
-              cartPageGetSausageRollUseCase: mockCartPageGetSausageRollUsecase);
+              cartPageGetSausageRollUseCase: mockCartPageGetSausageRollUsecase,
+              cartPageAddItemUseCase: mockCartPageAddItemUseCase);
 
           when(() => mockCartPageGetSausageRollUsecase.call()).thenAnswer(
               (_) async => Left(RuntimeException(

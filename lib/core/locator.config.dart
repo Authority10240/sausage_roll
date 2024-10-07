@@ -21,10 +21,16 @@ import '../features/cart/data/data_source/remote/sausage_roll_remote_data_source
     as _i670;
 import '../features/cart/data/data_source/remote/sausage_roll_remote_data_source_impl.dart'
     as _i818;
+import '../features/cart/data/repository_impl/cart_repository_impl/cart_page_add_item_repository_impl.dart'
+    as _i705;
 import '../features/cart/data/repository_impl/cart_repository_impl/cart_page_get_sausage_roll_repository_impl.dart'
     as _i921;
+import '../features/cart/domain/repository/cart_repository/cart_page_add_item_repository.dart'
+    as _i76;
 import '../features/cart/domain/repository/cart_repository/cart_page_get_sausage_roll_repository.dart'
     as _i332;
+import '../features/cart/domain/use_cases/cart_usecase/cart_page_add_item_usecase.dart'
+    as _i31;
 import '../features/cart/domain/use_cases/cart_usecase/cart_page_get_sausage_roll_usecase.dart'
     as _i321;
 import '../features/cart/presentation/bloc/cart_bloc.dart' as _i421;
@@ -57,17 +63,25 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i929.SausageRollLocalDataSource>(() =>
         _i1069.SausageRolllocalDataSourceImpl(
             db: gh<_i264.CustomSembastDatabase>()));
+    gh.factory<_i76.CartPageAddItemRepository>(() =>
+        _i705.CartPageAddItemRepositoryImpl(
+            sausageRollLocalDataSource:
+                gh<_i929.SausageRollLocalDataSource>()));
     gh.factory<_i332.CartPageGetSausageRollRepository>(() =>
         _i921.CartPageGetSausageRollRepositoryImpl(
             sausageRollRemoteDataSource:
                 gh<_i670.SausageRollRemoteDataSource>()));
+    gh.factory<_i31.CartPageAddItemUseCase>(() => _i31.CartPageAddItemUseCase(
+        cartPageAddItemRepository: gh<_i76.CartPageAddItemRepository>()));
     gh.factory<_i321.CartPageGetSausageRollUseCase>(() =>
         _i321.CartPageGetSausageRollUseCase(
             cartPageGetSausageRollRepository:
                 gh<_i332.CartPageGetSausageRollRepository>()));
     gh.factory<_i421.CartBloc>(() => _i421.CartBloc(
-        cartPageGetSausageRollUseCase:
-            gh<_i321.CartPageGetSausageRollUseCase>()));
+          cartPageGetSausageRollUseCase:
+              gh<_i321.CartPageGetSausageRollUseCase>(),
+          cartPageAddItemUseCase: gh<_i31.CartPageAddItemUseCase>(),
+        ));
     return this;
   }
 }
