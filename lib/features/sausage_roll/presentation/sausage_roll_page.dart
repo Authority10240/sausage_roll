@@ -43,14 +43,14 @@ class _SausageRollPageState
             : (state is SausageRollGetAllSausagesState ||
                         state is SausageRollChangeArrangementState) &&
                     state.dataState == DataState.success
-                ? Container(
+                ? SizedBox(
                     width: MediaQuery.sizeOf(context).width,
                     height: MediaQuery.sizeOf(context).height,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: 20, left: 20),
+                          padding: const EdgeInsets.only(top: 20, left: 20),
                           child: Text(
                             appLocalizations.yourCart,
                             style: const TextStyle(
@@ -125,7 +125,7 @@ class _SausageRollPageState
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           height: 50,
                           width: MediaQuery.sizeOf(context).width,
                           child: Row(
@@ -133,11 +133,11 @@ class _SausageRollPageState
                             children: [
                               Text(
                                 appLocalizations.totalDue,
-                                style: TextStyle(fontSize: 24),
+                                style: const TextStyle(fontSize: 24),
                               ),
                               Text(
                                 state.amount!.toCurrency,
-                                style: TextStyle(fontSize: 24),
+                                style: const TextStyle(fontSize: 24),
                               ),
                             ],
                           ),
